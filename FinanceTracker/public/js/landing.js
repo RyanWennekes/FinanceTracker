@@ -65,6 +65,9 @@ function initializeBills() {
 
             form.append(email, password, submit);
             document.body.append(form);
+            form.style.animationName = "slide";
+            form.style.animationDuration = "0.3s";
+            // form.style.transform = "translate(0rem)";
         });
     }
 

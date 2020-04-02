@@ -61,16 +61,18 @@ h1, h2, h3, h4, h5, h6 {
 
         // Apply
         width: 100%;
-        border-radius: 1rem;
         padding: 0.5rem;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.35rem;
+        font-family: var.$font-header;
 
-        box-shadow: 0 0 0.5rem 0 var.$theme-shadow;
+        box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem var.$theme-shadow;
+
+        transition: 0.2s;
     }
 
     input[type="submit"] {
         background: var.$theme-secondary;
         color: var.$theme-main-contrast;
-        font-weight: bold;
+        text-shadow: 0.1rem 0.1rem var.$theme-shadow;
     }
 }

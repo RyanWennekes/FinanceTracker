@@ -86,4 +86,30 @@ p {
 form {
     @include global.reset-form;
     margin-top: 2rem;
+
+    input:nth-child(odd):focus {
+        transform: scale(1.1) rotate(-2deg);
+    }
+
+    input:nth-child(even):focus {
+        transform: scale(1.1) rotate(2deg);
+    }
+
+    input[type="submit"] {
+        margin-top: 1rem;
+        transform: scale(1.2) rotate(-2deg);
+    }
+
+    input[type="submit"]:focus {
+        transform: scale(1.4) rotate(-2deg);
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateX(0);
+    }
 }

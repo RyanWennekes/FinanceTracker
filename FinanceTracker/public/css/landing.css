@@ -141,15 +141,53 @@ form input {
   outline: none;
   border: none;
   width: 100%;
-  border-radius: 1rem;
   padding: 0.5rem;
-  margin-bottom: 0.25rem;
-  box-shadow: 0 0 0.5rem 0 #000000;
+  margin-bottom: 0.35rem;
+  font-family: "Luckiest Guy", cursive;
+  box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem #000000;
+  transition: 0.2s;
 }
 
 form input[type=submit] {
   background: #555555;
   color: #FFFFFF;
-  font-weight: bold;
+  text-shadow: 0.1rem 0.1rem #000000;
+}
+
+form input:nth-child(odd):focus {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+form input:nth-child(even):focus {
+  transform: scale(1.1) rotate(2deg);
+}
+
+form input[type=submit] {
+  margin-top: 1rem;
+  transform: scale(1.2) rotate(-2deg);
+}
+
+form input[type=submit]:focus {
+  transform: scale(1.4) rotate(-2deg);
+}
+
+@-webkit-keyframes slide {
+  from {
+    transform: translateY(-100vh);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-100vh);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
