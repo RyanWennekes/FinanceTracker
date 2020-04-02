@@ -154,12 +154,8 @@ form input[type=submit] {
   text-shadow: 0.1rem 0.1rem #000000;
 }
 
-form input:nth-child(odd):focus {
+form input:focus {
   transform: scale(1.1) rotate(-2deg);
-}
-
-form input:nth-child(even):focus {
-  transform: scale(1.1) rotate(2deg);
 }
 
 form input[type=submit] {

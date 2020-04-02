@@ -87,12 +87,8 @@ form {
     @include global.reset-form;
     margin-top: 2rem;
 
-    input:nth-child(odd):focus {
+    input:focus {
         transform: scale(1.1) rotate(-2deg);
-    }
-
-    input:nth-child(even):focus {
-        transform: scale(1.1) rotate(2deg);
     }
 
     input[type="submit"] {
