@@ -52,3 +52,41 @@ h6 {
   text-align: center;
 }
 
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #F30021;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: "Luckiest Guy", cursive;
+  margin-bottom: 2rem;
+}
+
+form {
+  width: 200px;
+  margin: 0 auto;
+}
+
+form input {
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 0 0.5rem 0 #000000;
+}
+
+form input[type=submit] {
+  background: #555555;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+

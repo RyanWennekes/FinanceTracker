@@ -1,1 +1,76 @@
-//
+@use "variables" as var;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background: var.$theme-background;
+    color: var.$theme-background-contrast;
+
+    font-family: var.$font-content;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.header {
+    background: var.$theme-main;
+    color: var.$theme-main-contrast;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    z-index: 1;
+
+    font-family: var.$font-header;
+    font-size: 2rem;
+    text-align: center;
+
+    box-shadow: 0 0 0.5rem 0 var.$theme-shadow;
+}
+
+.content {
+    background: var.$theme-content;
+    color: var.$theme-content-contrast;
+
+    box-sizing: border-box;
+    max-width: 1000px;
+    height: 1000px;
+    padding: 1rem;
+    margin: 0 auto;
+
+    box-shadow: 0 0 0.5rem 0 var.$theme-shadow;
+}
+
+.content > h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+@mixin reset-form {
+    width: 200px;
+    margin: 0 auto;
+    input {
+        // Reset
+        display: block;
+        outline: none;
+        border: none;
+
+        // Apply
+        width: 100%;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        margin-bottom: 0.25rem;
+
+        box-shadow: 0 0 0.5rem 0 var.$theme-shadow;
+    }
+
+    input[type="submit"] {
+        background: var.$theme-secondary;
+        color: var.$theme-main-contrast;
+        font-weight: bold;
+    }
+}

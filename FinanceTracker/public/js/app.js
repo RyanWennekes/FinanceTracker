@@ -19317,6 +19317,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/_variables.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/_variables.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/global.scss":
 /*!************************************!*\
   !*** ./resources/sass/global.scss ***!
@@ -19328,15 +19339,28 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/landing.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/landing.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!****************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/global.scss ***!
-  \****************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/global.scss ./resources/sass/_variables.scss ./resources/sass/landing.scss ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\Ryan\repo\FinanceTracker\FinanceTracker\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Ryan\repo\FinanceTracker\FinanceTracker\resources\sass\global.scss */"./resources/sass/global.scss");
+__webpack_require__(/*! C:\Users\Ryan\repo\FinanceTracker\FinanceTracker\resources\sass\global.scss */"./resources/sass/global.scss");
+__webpack_require__(/*! C:\Users\Ryan\repo\FinanceTracker\FinanceTracker\resources\sass\_variables.scss */"./resources/sass/_variables.scss");
+module.exports = __webpack_require__(/*! C:\Users\Ryan\repo\FinanceTracker\FinanceTracker\resources\sass\landing.scss */"./resources/sass/landing.scss");
 
 
 /***/ })
