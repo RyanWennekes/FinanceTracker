@@ -12,7 +12,6 @@
             @include('components/signup-pen')
         </div>
 
-    <script> </script>
-    @stack('script')
+    <script src="{{asset('js/landing.js')}}"></script>
     </body>
 </html>

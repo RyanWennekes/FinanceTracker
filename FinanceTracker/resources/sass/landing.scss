@@ -50,9 +50,9 @@ p {
     box-shadow: 0.25rem 0.25rem 0.5rem 0 var.$theme-shadow;
     font-family: var.$font-header;
 
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
+    //-webkit-transition: 0.2s ease-in-out;
+    //-moz-transition: 1s ease-in-out;
+    //-o-transition: 1s ease-in-out;
 
     .label {
         background: var.$theme-icon-fill;
@@ -70,12 +70,8 @@ p {
     }
 }
 
-.box:hover {
-    cursor: pointer;
-    background: white;
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
+.box-hover {
+    background: var.$theme-main-contrast;
 
     .icon {
         fill: var.$theme-main;
@@ -87,25 +83,42 @@ p {
     }
 }
 
-.rotate {
-    transform: scale(1.3) rotate(20deg);
-}
-
-.rotate-counter {
-    transform: rotate(-10deg)
-}
-
-.rotate-counter:hover {
-    transform: scale(1.3) rotate(-20deg);
-}
-
-.rotate-counter:hover + .rotate {
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-    transform: scale(1) rotate(10deg);
-    z-index: -1;
-}
+//.box:hover {
+//    cursor: pointer;
+//    background: white;
+//    -webkit-transition: 0.2s ease-in-out;
+//    -moz-transition: 1s ease-in-out;
+//    -o-transition: 1s ease-in-out;
+//
+//    .icon {
+//        fill: var.$theme-main;
+//    }
+//
+//    .label {
+//        color: var.$theme-main;
+//        text-shadow: 0.1rem 0 0.1rem var.$theme-main-contrast;
+//    }
+//}
+//
+//.rotate {
+//    transform: scale(1.3) rotate(20deg);
+//}
+//
+//.rotate-counter {
+//    transform: rotate(-10deg)
+//}
+//
+//.rotate-counter:hover {
+//    transform: scale(1.3) rotate(-20deg);
+//}
+//
+//.rotate-counter:hover + .rotate {
+//    -webkit-transition: 0.2s ease-in-out;
+//    -moz-transition: 1s ease-in-out;
+//    -o-transition: 1s ease-in-out;
+//    transform: scale(1) rotate(10deg);
+//    z-index: -1;
+//}
 
 form {
     @include global.reset-form;
