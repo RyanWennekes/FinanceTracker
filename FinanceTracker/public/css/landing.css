@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background: #CCCCCC;
+  background: #AAAAAA;
   color: #333333;
   font-family: "Open Sans", Sans-Serif;
 }
@@ -57,7 +57,7 @@ html {
 }
 
 body {
-  background: #F30021;
+  background: linear-gradient(-20deg, #FD5638 20%, #F30021 60%, #FD5638 100%);
   color: #FFFFFF;
   text-align: center;
 }
@@ -66,6 +66,95 @@ h1 {
   font-size: 6rem;
   font-family: "Luckiest Guy", cursive;
   margin-bottom: 2rem;
+  text-shadow: 0.5rem 0.5rem 0.5rem black;
+  -webkit-transform: rotate(-2deg) translateY(1rem);
+}
+
+p {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 2rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem black;
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.stress {
+  display: inline-block;
+  -webkit-transform: rotate(-5deg);
+}
+
+.options {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 12rem;
+  margin: 3rem auto;
+}
+
+.box {
+  border: 2px solid #000000;
+  background: #AAAAAA;
+  border-radius: 0.75rem;
+  width: 5rem;
+  color: #333333;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.5rem 0 #000000;
+  font-family: "Luckiest Guy", cursive;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+}
+
+.box .label {
+  background: #333333;
+  color: #FFFFFF;
+  display: block;
+  padding: 0.25rem;
+}
+
+.box .icon {
+  stroke: #000000;
+  fill: #333333;
+  width: 3rem;
+  overflow: visible;
+  padding: 1rem;
+}
+
+.box:hover {
+  cursor: pointer;
+  background: white;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+}
+
+.box:hover .icon {
+  fill: #F30021;
+}
+
+.box:hover .label {
+  color: #F30021;
+  text-shadow: 0.1rem 0 0.1rem #FFFFFF;
+}
+
+.rotate {
+  transform: scale(1.3) rotate(20deg);
+}
+
+.rotate-counter {
+  transform: rotate(-10deg);
+}
+
+.rotate-counter:hover {
+  transform: scale(1.3) rotate(-20deg);
+}
+
+.rotate-counter:hover + .rotate {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transform: scale(1) rotate(10deg);
+  z-index: -1;
 }
 
 form {
