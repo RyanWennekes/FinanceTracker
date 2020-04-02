@@ -132,7 +132,8 @@ p {
 
 form {
   width: 200px;
-  margin: 0 auto;
+  margin: auto auto;
+  margin-top: 2rem;
 }
 
 form input {

@@ -50,45 +50,85 @@ function initializeBills() {
     signup.addEventListener('click', createSignUp);
 
     function createLogin() {
-        discardBills();
+        createPromise().then((form) => {
+            let email = document.createElement('input');
+            email.type = 'email';
+            email.placeholder = 'Email Address';
 
-        document.createElement('form').appendChild('input');
+            let password = document.createElement('input');
+            password.type = 'password';
+            password.placeholder = 'Password'
 
+            let submit = document.createElement('input');
+            submit.value = 'Login!';
+            submit.type = 'submit';
+
+            form.append(email, password, submit);
+            document.body.append(form);
+        });
     }
 
     function createSignUp() {
-        discardBills();
+        createPromise().then((form) => {
+            let name = document.createElement('input');
+            name.type = 'text';
+            name.placeholder = 'Name';
+
+            let email = document.createElement('input');
+            email.type = 'email';
+            email.placeholder = 'Email Address';
+
+            let password = document.createElement('input');
+            password.type = 'password';
+            password.placeholder = 'Password';
+
+            let passwordConfirm = document.createElement('input');
+            passwordConfirm.type = 'password';
+            passwordConfirm.placeholder = 'Confirm Password';
+
+            let submit = document.createElement('input');
+            submit.value = 'Sign Up!';
+            submit.type = 'submit';
+
+            form.append(name, email, password, passwordConfirm, submit);
+            document.body.append(form);
+        });
     }
 
-    function discardBills() {
-        login.removeEventListener('click', createLogin);
-        login.removeEventListener('mouseenter', mouseEnterLogin);
-        login.removeEventListener('mouseleave', mouseLeaveLogin);
-        signup.removeEventListener('click', createSignUp);
-        signup.removeEventListener('mouseenter', mouseEnterSignUp);
-        signup.removeEventListener('mouseleave', mouseLeaveSignUp);
+    function createPromise() {
+        return new Promise((resolve, reject) => {
+            login.removeEventListener('click', createLogin);
+            login.removeEventListener('mouseenter', mouseEnterLogin);
+            login.removeEventListener('mouseleave', mouseLeaveLogin);
+            signup.removeEventListener('click', createSignUp);
+            signup.removeEventListener('mouseenter', mouseEnterSignUp);
+            signup.removeEventListener('mouseleave', mouseLeaveSignUp);
 
-        document.body.style.cursor = "default";
+            document.body.style.cursor = "default";
 
-        login.style.transform = "scale(1.3) rotate(10deg) translateX(3rem)";
-        signup.style.transform = "scale(1.3) rotate(20deg)";
-        login.addEventListener('transitionend', function() {
-            login.removeEventListener('transitionend', arguments.callee);
-            login.style.transition = "0.9s";
-            signup.style.transition = "0.9s";
-
-            login.style.transitionDelay = "0.2s";
-            signup.style.transitionDelay = "0.2s";
-
-            login.style.transform = "translateX(30rem) translateY(-70rem) scale(0.0001) rotate(30deg)";
-            signup.style.transform = "translateX(30rem) translateY(-70rem) scale(0.0001) rotate(50deg)";
-
+            login.style.transform = "scale(1.3) rotate(10deg) translateX(3rem)";
+            signup.style.transform = "scale(1.3) rotate(20deg)";
             login.addEventListener('transitionend', function() {
-                login.remove();
-                signup.remove();
+                login.removeEventListener('transitionend', arguments.callee);
+                login.style.transition = "0.9s";
+                signup.style.transition = "0.9s";
 
-                let form = document.createElement('form');
+                login.style.transitionDelay = "0.2s";
+                signup.style.transitionDelay = "0.2s";
+
+                login.style.transform = "translateX(30rem) translateY(-70rem) scale(0.0001) rotate(30deg)";
+                signup.style.transform = "translateX(30rem) translateY(-70rem) scale(0.0001) rotate(50deg)";
+
+                login.addEventListener('transitionend', function() {
+                    login.parentElement.remove();
+                    login.remove();
+                    signup.remove();
+
+                    let form = document.createElement('form');
+                    form.id = "form";
+                    resolve(form);
+                })
             })
-        })
+        });
     }
 }
