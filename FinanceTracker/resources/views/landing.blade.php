@@ -1,6 +1,7 @@
 <html>
     <head>
         <link href="{{asset('css/landing.css')}}" rel="stylesheet" type="text/css" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
     </head>
     <body>
         <h1>{{config('app.name')}}</h1>
@@ -11,7 +12,6 @@
             @include('components/login-key')
             @include('components/signup-pen')
         </div>
-
     <script src="{{asset('js/landing.js')}}"></script>
     </body>
 </html>

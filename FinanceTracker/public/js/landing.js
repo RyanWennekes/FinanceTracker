@@ -52,18 +52,26 @@ function initializeBills() {
     function createLogin() {
         createPromise().then((form) => {
             let email = document.createElement('input');
+            email.name = 'password';
             email.type = 'email';
             email.placeholder = 'Email Address';
 
             let password = document.createElement('input');
+            password.name = 'password';
             password.type = 'password';
-            password.placeholder = 'Password'
+            password.placeholder = 'Password';
+
+            let token = document.createElement('input');
+            token.type = 'hidden';
+            token.name = '_token';
+            token.value = document.head.querySelector('meta[name=csrf-token]').content;
 
             let submit = document.createElement('input');
             submit.value = 'Login!';
             submit.type = 'submit';
 
-            form.append(email, password, submit);
+            form.action = "/";
+            form.append(email, password, token, submit);
             document.body.append(form);
             form.style.animationName = "slide";
             form.style.animationDuration = "0.3s";
@@ -74,26 +82,36 @@ function initializeBills() {
     function createSignUp() {
         createPromise().then((form) => {
             let name = document.createElement('input');
+            name.name = 'name';
             name.type = 'text';
             name.placeholder = 'Name';
 
             let email = document.createElement('input');
+            email.name = 'email';
             email.type = 'email';
             email.placeholder = 'Email Address';
 
             let password = document.createElement('input');
+            password.name = 'password';
             password.type = 'password';
             password.placeholder = 'Password';
 
             let passwordConfirm = document.createElement('input');
+            passwordConfirm.name = 'passwordConfirm';
             passwordConfirm.type = 'password';
             passwordConfirm.placeholder = 'Confirm Password';
+
+            let token = document.createElement('input');
+            token.type = 'hidden';
+            token.name = '_token';
+            token.value = document.head.querySelector('meta[name=csrf-token]').content;
 
             let submit = document.createElement('input');
             submit.value = 'Sign Up!';
             submit.type = 'submit';
 
-            form.append(name, email, password, passwordConfirm, submit);
+            form.action = "/create";
+            form.append(name, email, password, passwordConfirm, token, submit);
             document.body.append(form);
         });
     }
@@ -129,6 +147,7 @@ function initializeBills() {
 
                     let form = document.createElement('form');
                     form.id = "form";
+                    form.method = "POST";
                     resolve(form);
                 })
             })
