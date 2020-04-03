@@ -1,20 +1,33 @@
-document.onload = initializeBills();
+document.onload = setUpLanding();
+document.onresize = setUpLanding();
+
+function setUpLanding() {
+    document.body.style.overflowX = "hidden";
+    let header = document.querySelector('h1');
+    console.log(header.clientHeight);
+
+    if(screen.width > 600) {
+        header.style.marginTop = (window.innerHeight / 2) - header.clientHeight * 2 + "px";
+    } else {
+        header.style.marginTop = "6rem";
+    }
+    initializeBills();
+}
 
 function initializeBills() {
-    document.body.style.overflowX = "hidden";
     let login = document.getElementById('login');
     let signup = document.getElementById('signup');
 
     login.style.transform = "rotate(-20deg)";
-    login.style.transition = "0.2s";
     signup.style.transform = "scale(1.3) rotate(20deg)";
     signup.style.zIndex = "1";
-    signup.style.transition = "0.2s";
 
     login.addEventListener('mouseenter', mouseEnterLogin);
 
     function mouseEnterLogin() {
         document.body.style.cursor = "pointer";
+        login.style.transition = "0.2s";
+        signup.style.transition = "0.2s";
         signup.style.transform = "scale(1.1) rotate(10deg)";
         login.style.transform = "scale(1.3) rotate(-10deg)";
         login.style.zIndex = "2";
@@ -113,6 +126,8 @@ function initializeBills() {
             form.action = "/create";
             form.append(name, email, password, passwordConfirm, token, submit);
             document.body.append(form);
+            form.style.animationName = "slide";
+            form.style.animationDuration = "0.3s";
         });
     }
 
@@ -131,24 +146,29 @@ function initializeBills() {
             signup.style.transform = "scale(1.3) rotate(20deg)";
             login.addEventListener('transitionend', function() {
                 login.removeEventListener('transitionend', arguments.callee);
-                login.style.transition = "0.9s";
-                signup.style.transition = "0.9s";
+                login.style.transition = "0.2s";
+                signup.style.transition = "0.2s";
 
-                login.style.transitionDelay = "0.2s";
-                signup.style.transitionDelay = "0.2s";
-
-                login.style.transform = "translateX(30rem) translateY(-70rem) scale(0.0001) rotate(30deg)";
-                signup.style.transform = "translateX(30rem) translateY(-70rem) scale(0.0001) rotate(50deg)";
+                login.style.transform = "translateX(4rem) rotateX(50deg) scale(1.3) rotate(0deg)";
+                signup.style.transform = "rotateX(50deg) scale(1.3) rotate(0deg)";
 
                 login.addEventListener('transitionend', function() {
-                    login.parentElement.remove();
-                    login.remove();
-                    signup.remove();
+                    login.style.transition = "0.6s";
+                    signup.style.transition = "0.6s";
+                    login.style.transform = "translateX(24rem) translateY(-15rem) rotateX(90deg) scale(0.001) rotate(20deg)";
+                    signup.style.transform = "translateX(20rem) translateY(-15rem) rotateX(90deg) scale(0.001) rotate(40deg)";
 
-                    let form = document.createElement('form');
-                    form.id = "form";
-                    form.method = "POST";
-                    resolve(form);
+
+                    login.addEventListener('transitionend', function() {
+                        login.parentElement.remove();
+                        login.remove();
+                        signup.remove();
+
+                        let form = document.createElement('form');
+                        form.id = "form";
+                        form.method = "POST";
+                        resolve(form);
+                    })
                 })
             })
         });

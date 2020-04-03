@@ -2,8 +2,10 @@
 @use "global" as global;
 
 html {
-    font-size: 16px;
+    font-size: 3vw;
 }
+
+@include global.mediaQueries;
 
 body {
     background: linear-gradient(-20deg, var.$theme-main-gradient 20%, var.$theme-main 60%, var.$theme-main-gradient 100%);
@@ -42,17 +44,13 @@ p {
 
 .box {
     border: 2px solid var.$theme-icon-stroke;
-    background: var.$theme-background;
+    background: var.$theme-dollar-light;
     border-radius: 0.75rem;
     width: 5rem;
     color: var.$theme-icon-fill;
     overflow: hidden;
     box-shadow: 0.25rem 0.25rem 0.5rem 0 var.$theme-shadow;
     font-family: var.$font-header;
-
-    //-webkit-transition: 0.2s ease-in-out;
-    //-moz-transition: 1s ease-in-out;
-    //-o-transition: 1s ease-in-out;
 
     .label {
         background: var.$theme-icon-fill;

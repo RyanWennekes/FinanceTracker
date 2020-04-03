@@ -53,7 +53,13 @@ h6 {
 }
 
 html {
-  font-size: 16px;
+  font-size: 3vw;
+}
+
+@media only screen and (min-width: 800px) {
+  html {
+    font-size: 1.5vw;
+  }
 }
 
 body {
@@ -93,17 +99,17 @@ p {
 
 .box {
   border: 2px solid #000000;
-  background: #AAAAAA;
+  background: #39913E;
   border-radius: 0.75rem;
   width: 5rem;
-  color: #333333;
+  color: #125E17;
   overflow: hidden;
   box-shadow: 0.25rem 0.25rem 0.5rem 0 #000000;
   font-family: "Luckiest Guy", cursive;
 }
 
 .box .label {
-  background: #333333;
+  background: #125E17;
   color: #FFFFFF;
   display: block;
   padding: 0.25rem;
@@ -111,7 +117,7 @@ p {
 
 .box .icon {
   stroke: #000000;
-  fill: #333333;
+  fill: #125E17;
   width: 3rem;
   overflow: visible;
   padding: 1rem;

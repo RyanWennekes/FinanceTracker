@@ -1,19 +1,22 @@
-// Body
-$body-bg: #f8fafc;
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+// Fonts
+$font-header: 'Luckiest Guy', cursive;
+$font-content: 'Open Sans', Sans-Serif;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$theme-main: #F30021;
+$theme-main-contrast: #FFFFFF;
+$theme-main-gradient: #FD5638;
+$theme-secondary: #555555;
+$theme-content: #FFFFFF;
+$theme-content-contrast: #555555;
+$theme-background: #AAAAAA;
+$theme-background-contrast: #333333;
+$theme-shadow: #000000;
+$theme-dollar-light: #39913E;
+$theme-dollar-dark: #125E17;
+$theme-icon-fill: $theme-dollar-dark;
+$theme-icon-stroke: #000000;
+
