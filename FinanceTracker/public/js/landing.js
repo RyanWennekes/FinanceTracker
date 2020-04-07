@@ -34,13 +34,6 @@ function initializeBills() {
         login.classList.add('box-hover');
     }
 
-    signup.addEventListener('mouseenter', mouseEnterSignUp);
-
-    function mouseEnterSignUp() {
-        document.body.style.cursor = "pointer";
-        signup.classList.add('box-hover');
-    }
-
     login.addEventListener('mouseleave', mouseLeaveLogin);
 
     function mouseLeaveLogin() {
@@ -51,13 +44,21 @@ function initializeBills() {
         login.classList.remove('box-hover');
     }
 
+    signup.addEventListener('mouseenter', mouseEnterSignUp);
+
+    function mouseEnterSignUp() {
+        document.body.style.cursor = "pointer";
+        login.style.transition = "0.2s";
+        signup.style.transition = "0.2s";
+        signup.classList.add('box-hover');
+    }
+
     signup.addEventListener('mouseleave', mouseLeaveSignUp);
 
     function mouseLeaveSignUp() {
         document.body.style.cursor = "inherit";
         signup.classList.remove('box-hover');
     }
-
 
     login.addEventListener('click', createLogin);
     signup.addEventListener('click', createSignUp);
@@ -88,7 +89,7 @@ function initializeBills() {
             document.body.append(form);
             form.style.animationName = "slide";
             form.style.animationDuration = "0.3s";
-            // form.style.transform = "translate(0rem)";
+            form.firstElementChild.focus();
         });
     }
 
@@ -128,6 +129,7 @@ function initializeBills() {
             document.body.append(form);
             form.style.animationName = "slide";
             form.style.animationDuration = "0.3s";
+            form.firstElementChild.focus();
         });
     }
 
@@ -149,8 +151,8 @@ function initializeBills() {
                 login.style.transition = "0.2s";
                 signup.style.transition = "0.2s";
 
-                login.style.transform = "translateX(4rem) rotateX(50deg) scale(1.3) rotate(0deg)";
-                signup.style.transform = "rotateX(50deg) scale(1.3) rotate(0deg)";
+                login.style.transform = "translateX(4rem) rotateX(50deg) scale(1.3) rotate(10deg)";
+                signup.style.transform = "rotateX(50deg) scale(1.3) rotate(15deg)";
 
                 login.addEventListener('transitionend', function() {
                     login.style.transition = "0.6s";

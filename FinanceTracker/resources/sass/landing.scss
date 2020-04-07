@@ -11,6 +11,7 @@ body {
     background: linear-gradient(-20deg, var.$theme-main-gradient 20%, var.$theme-main 60%, var.$theme-main-gradient 100%);
     color: var.$theme-main-contrast;
     text-align: center;
+    height: 10000px;
 }
 
 h1 {
@@ -35,16 +36,22 @@ p {
 }
 
 .options {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 12rem;
-    margin: 3rem auto;
+    width: 400px;
+    //margin: 3rem auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.options svg {
+    transform: translateY(30%);
 }
 
 .box {
     border: 2px solid var.$theme-icon-stroke;
-    background: var.$theme-dollar-light;
+    background: var.$theme-background;
     border-radius: 0.75rem;
     width: 5rem;
     color: var.$theme-icon-fill;
@@ -106,4 +113,13 @@ form {
     to {
         transform: translateX(0);
     }
+}
+
+svg:hover #path876 {
+    fill: #FFFFFF !important;
+    cursor: pointer !important;
+}
+
+svg:hover {
+    cursor: pointer;
 }

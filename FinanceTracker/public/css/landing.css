@@ -52,6 +52,18 @@ h6 {
   text-align: center;
 }
 
+input {
+  background-color: #CECECE;
+}
+
+input:focus {
+  background-color: #FFFFFF;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
 html {
   font-size: 3vw;
 }
@@ -66,6 +78,7 @@ body {
   background: linear-gradient(-20deg, #FD5638 20%, #F30021 60%, #FD5638 100%);
   color: #FFFFFF;
   text-align: center;
+  height: 10000px;
 }
 
 h1 {
@@ -90,16 +103,21 @@ p {
 }
 
 .options {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 12rem;
-  margin: 3rem auto;
+  width: 400px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.options svg {
+  transform: translateY(30%);
 }
 
 .box {
   border: 2px solid #000000;
-  background: #39913E;
+  background: #AAAAAA;
   border-radius: 0.75rem;
   width: 5rem;
   color: #125E17;
@@ -191,5 +209,14 @@ form input[type=submit]:focus {
   to {
     transform: translateX(0);
   }
+}
+
+svg:hover #path876 {
+  fill: #FFFFFF !important;
+  cursor: pointer !important;
+}
+
+svg:hover {
+  cursor: pointer;
 }
 

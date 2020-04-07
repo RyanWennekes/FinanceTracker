@@ -52,3 +52,15 @@ h6 {
   text-align: center;
 }
 
+input {
+  background-color: #CECECE;
+}
+
+input:focus {
+  background-color: #FFFFFF;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+

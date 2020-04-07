@@ -11,7 +11,7 @@
         </p>
         <div class="options">
             @include('components/login-key')
-            @include('components/signup-pen')
+{{--            @include('components/signup-pen')--}}
         </div>
         @include('partials.footer')
     <script src="{{asset('js/landing.js')}}"></script>
